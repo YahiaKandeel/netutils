@@ -1,29 +1,29 @@
 #!/usr/bin/python
 from netutils import mailer
 
-##### Configure
-server  = 'x.x.x.x'
-Att 	= 'path/to/your/attachment'
-From 	= 'LDAP Report<reporter@local.me>'
-To   	= 'Yahia Kandeel<yahia@local.me>'
+# Configure
+server = 'x.x.x.x'
+Att = 'path/to/your/attachment'
+From = 'LDAP Report<reporter@local.me>'
+To = 'Yahia Kandeel<yahia@local.me>'
 Subject = 'Report'
-Body	= '<br /><br /><br /><p>Best Regards,</p>'
+Body = '<br /><br /><br /><p>Best Regards,</p>'
 
-##### Zip Attachment
+# Zip Attachment
 attachment_name, data = mailer.zip(Att)
 Attachment_Type = 'zip'
 
-#### Create Message
+# Create Message
 msg = mailer.message(
-			From,  					### From
-			To, 	 				### To
-			Subject, 				### Subject
-			Body, 					### Body
-			Attachment_Data = data, 	
-			Attachment_Filename = attachment_name, 
-			Attachment_Type = Attachment_Type
-		)
+    From,  # From
+    To,  # To
+    Subject,  # Subject
+    Body,  # Body
+    Attachment_Data=data,
+    Attachment_Filename=attachment_name,
+    Attachment_Type=Attachment_Type
+)
 
 
-#### Send The Message
+# Send The Message
 mailer.send(server, From, To, msg)
