@@ -1,7 +1,7 @@
 ##################################################################
 # Netconf Module ..
 # Wrapped over paramiko ..
-# By: Yahia Kandil<yahia.kandil@gmail.com>
+# By: Yahia Kandil<yahia.kandeel@gmail.com>
 ##################################################################
 import paramiko
 import socket
